@@ -1,0 +1,24 @@
+module bcdadd(
+    input [3:0] a,
+    input [3:0] b,
+    input cin,
+    output [3:0]cout,
+    output [3:0] sum
+    );
+
+reg [4:0] s2;
+
+
+
+always @ ( * )
+begin
+    s2 = a + b + cin;
+    if (s2 > 9)
+    begin
+        s2= s2 + 6;
+    end
+  end
+    assign sum= s2[3:0];
+    assign cout = s2[4];
+     
+endmodule 
